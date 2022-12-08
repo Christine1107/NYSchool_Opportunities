@@ -23,10 +23,6 @@ page_bg_img = """
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-
-
-
-
 # pre-load animation
 def load_lottieurl(url):
     r = requests.get(url)
@@ -187,9 +183,8 @@ try:
                                 st.markdown("   Activities: {0}".format(df_selection["extracurricular_activities"].values[dex]))
                         except Nan:
                             st.write("No data  ")
-
-
-
+    st.write("---")
+    st.subheader("School Statistics")
     fig = go.Figure()
     fig.add_trace(go.Bar(
         x=df_selection["school_name"],
@@ -219,16 +214,6 @@ try:
     # Here we modify the tickangle of the xaxis, resulting in rotated labels.
     fig.update_layout(barmode='group', xaxis_tickangle=-45)
     st.plotly_chart(fig)
-
-
-
-
-
-
-
-
-
-
 
     with st.container():
         #st.write("---")
